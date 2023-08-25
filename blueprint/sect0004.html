@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+  MathJax = { 
+    tex: {
+		    inlineMath: [['$','$'], ['\\(','\\)']]
+	} }
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+<meta name="generator" content="plasTeX" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Finite field model</title>
+<link rel="prev" href="sect0003.html" title="Dependent random choice" />
+<link rel="up" href="index.html" title="LeanAPAP" />
+<link rel="stylesheet" href="styles/theme-blue.css" />
+<link rel="stylesheet" href="styles/amsthm.css" />
+<link rel="stylesheet" href="styles/showmore.css" />
+<link rel="stylesheet" href="styles/stylecours.css" />
+</head>
+
+<body>
+<header>
+<svg  id="toc-toggle" class="icon icon-list-numbered "><use xlink:href="symbol-defs.svg#icon-list-numbered"></use></svg>
+<h1 id="doc_title"><a href="index.html">LeanAPAP</a></h1>
+</header>
+
+<div class="wrapper">
+<nav class="toc">
+<ul class="sub-toc-0">
+<li class="">
+  <a href="chap-ap.html"><span class="toc_ref">1</span> <span class="toc_entry">Almost-Periodicity</span></a>
+ </li>
+<li class="">
+  <a href="sect0001.html"><span class="toc_ref">2</span> <span class="toc_entry">Chang’s lemma</span></a>
+ </li>
+<li class="">
+  <a href="sect0002.html"><span class="toc_ref">3</span> <span class="toc_entry">Unbalancing</span></a>
+ </li>
+<li class="">
+  <a href="sect0003.html"><span class="toc_ref">4</span> <span class="toc_entry">Dependent random choice</span></a>
+ </li>
+<li class=" active current">
+  <a href="sect0004.html"><span class="toc_ref">5</span> <span class="toc_entry">Finite field model</span></a>
+ </li>
+<li ><a href="dep_graph_document.html">Dependency graph</a></li>
+</ul>
+</nav>
+
+<div class="content">
+<div class="content-wrapper">
+
+
+<div class="main-text">
+<h1 id="a0000000005">5 Finite field model</h1>
+<p><div class="theorem_thmwrapper" id="ap_in_ff">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.1</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#ap_in_ff">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000119"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/YaelDillies/LeanAPAP//blob/a6cdc492992775e1f557181f9ccdb5a8ea69bb7d/src/finite_field/basic.lean#L67">ap_in_ff</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>  If \(A_1,A_2,S\subseteq \mathbb {F}_q^n\) are such that \(A_1\) and \(A_2\) both have density at least \(\alpha \) then there is a subspace \(V\) of codimension </p>
+<div class="displaymath" id="a0000000120">
+  \[ \mathrm{codim}(V)\leq 2^{27}\mathcal{L}{(}\alpha )^2\mathcal{L}{(}\epsilon \alpha )^2\epsilon ^{-2} \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000121">
+  \[ \left\lvert \langle \mu _V\ast \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle -\langle \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle \right\rvert \leq \epsilon . \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000119">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> (In this proof we write \(G=\mathbb {F}_q^n\).) Let \(k=\lceil \mathcal{L}{(}\epsilon \alpha /4)\rceil \). Note that \(\lvert A_1+G\rvert =\lvert G\rvert \leq \alpha ^{-1}\lvert A\rvert \). Furthermore, \(\lvert A_2\rvert /\lvert S\rvert \geq \alpha \). Therefore by Theorem&#160;<a href="chap-ap.html#linfty_ap_boosted">1.8</a> there exists some \(T\subseteq G\) with </p>
+<div class="displaymath" id="a0000000122">
+  \[ \lvert T\rvert \geq \exp (-2^{16}\mathcal{L}{(}\alpha )^2k^2\epsilon ^{-2})\lvert S\rvert  \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000123">
+  \[ \|  \mu _T^{(k)}\ast \mu _{A_1}\ast \mu _{A_2}\circ 1_{S}-\mu _{A_1}\ast \mu _{A_2}\circ 1_{S}\| _{\infty }\leq \epsilon /4. \]
+</div>
+<p> Let \(\Delta =\Delta _{1/2}(\mu _T)\) and </p>
+<div class="displaymath" id="a0000000124">
+  \[ V = \{  x \in G : \gamma (x)=1\textrm{ for all }\gamma \in \Delta \} . \]
+</div>
+<p> Note that </p>
+<div class="displaymath" id="a0000000125">
+  \[ \langle \mu _V\ast \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle = \langle \mu _V,\mu _{A_1}\ast \mu _{A_2}\circ 1_{S}\rangle =\frac{1}{\left\lvert V\right\rvert }\sum _{v\in V}\mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(v) \]
+</div>
+<p> and </p>
+<div class="displaymath" id="a0000000126">
+  \[ \langle \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle = \mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(0). \]
+</div>
+<p> Therefore </p>
+<div class="displaymath" id="a0000000127">
+  \[ \left\lvert \langle \mu _V\ast \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle -\langle \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle \right\rvert \leq \frac{1}{\left\lvert V\right\rvert }\sum _{v\in V}\left\lvert \mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(v)-\mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(0)\right\rvert . \]
+</div>
+<p> In particular it suffices to show that, for any \(v\in V\), </p>
+<div class="displaymath" id="a0000000128">
+  \[ \left\lvert \mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(v)-\mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(0)\right\rvert \leq \epsilon . \]
+</div>
+<p> By the triangle inequality and construction of \(T\), it suffices to show that </p>
+<div class="displaymath" id="a0000000129">
+  \[ \left\lvert \mu _T^{(k)}\ast \mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(v)-\mu _T^{(k)}\ast \mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(0)\right\rvert \leq \epsilon /2. \]
+</div>
+<p> By the Fourier transform we have, for any \(x\in G\), </p>
+<div class="displaymath" id="a0000000130">
+  \[ \mu _T^{(k)}\ast \mu _{A_1}\ast \mu _{A_2}\circ 1_{S}(x)=\frac{1}{N}\sum _{\gamma \in \widehat{G}}\widehat{\mu _T}(\gamma )^k\widehat{\mu _{A_1}}(\gamma )\widehat{\mu _{A_2}}(\gamma )\widehat{1_{-S}}(\gamma )\gamma (x). \]
+</div>
+<p> Therefore the left-hand side of the desired inequality is, by the triangle inequality, at most </p>
+<div class="displaymath" id="a0000000131">
+  \[ \frac{1}{N}\sum _{\gamma \in \widehat{G}}\left\lvert \widehat{\mu _T}(\gamma )\right\rvert ^k\left\lvert \widehat{\mu _{A_1}}(\gamma )\widehat{\mu _{A_2}}(\gamma )\widehat{1_{-S}}(\gamma )\right\rvert \left\lvert \gamma (v)-1\right\rvert . \]
+</div>
+<p> By choice of \(v\in V\) the summand vanishes when \(\gamma \in \Delta \). When \(\gamma \not\in \Delta \) the summand is bounded above by </p>
+<div class="displaymath" id="a0000000132">
+  \[ 2^{1-k}\left\lvert \widehat{\mu _{A_1}}(\gamma )\widehat{\mu _{A_2}}(\gamma )\widehat{1_{-S}}(\gamma )\right\rvert . \]
+</div>
+<p> Therefore the left-hand side of the desired inequality is at most </p>
+<div class="displaymath" id="a0000000133">
+  \[ 2^{1-k}\frac{1}{N}\sum _{\gamma }\left\lvert \widehat{\mu _{A_1}}(\gamma )\widehat{\mu _{A_2}}(\gamma )\widehat{1_{-S}}(\gamma )\right\rvert \leq 2^{1-k}\left\lvert S\right\rvert \frac{1}{N}\sum _{\gamma }\left\lvert \widehat{\mu _{A_1}}(\gamma )\widehat{\mu _{A_2}}(\gamma )\right\rvert  \]
+</div>
+<p> using the trivial bound \(\lvert \widehat{1_{S}}\rvert \leq \left\lvert S\right\rvert \). By the Cauchy-Schwarz inequality the sum on the right is at most </p>
+<div class="displaymath" id="a0000000134">
+  \[ \left( \sum _\gamma \left\lvert \widehat{\mu _{A_1}}\right\rvert ^2\right)^{1/2}\left( \sum _\gamma \left\lvert \widehat{\mu _{A_2}}\right\rvert ^2\right)^{1/2}. \]
+</div>
+<p> By Parseval’s identity this is at most \(\alpha ^{-1}\). Therefore the desired inequality follows from </p>
+<div class="displaymath" id="a0000000135">
+  \[ 2^{1-k}\left\lvert S\right\rvert \frac{1}{N}\alpha ^{-1}\leq 2^{1-k}\alpha ^{-1}\leq \epsilon /2. \]
+</div>
+<p>It remains to check the codimension of \(V\). For this, let \(\Delta '\subseteq \Delta \) be as provided by Chang’s lemma, Lemma&#160;<a href="sect0001.html#chang">2.10</a>, so that </p>
+<div class="displaymath" id="a0000000136">
+  \[ \Delta \subseteq \left\{  \sum _{\gamma \in \Delta '}c_\gamma \gamma : c_\gamma \in \{ -1,0,1\}  \right\} . \]
+</div>
+<p> Let </p>
+<div class="displaymath" id="a0000000137">
+  \[ W= \{  x \in G : \gamma (x)=1\textrm{ for all }\gamma \in \Delta '\} . \]
+</div>
+<p> It follows that \(W\leq V\), so it suffices to bound the codimension of \(W\). This we can bound trivially using the bound from Chang’s lemma and the fact that \(\mathcal{L}{(}\delta )=\log (e^2/\delta )\leq 2+\log (1/\delta )\leq 4\log (1/\delta )\), provided \(\log (1/\delta )\geq 1\), so </p>
+<div class="displaymath" id="a0000000138">
+  \[ \left\lvert \Delta '\right\rvert \leq \lceil 4e\mathcal{L}(\delta )\rceil \leq 2^7\log (1/\delta ), \]
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000139">
+  \[ \delta =\left\lvert T\right\rvert /N\geq \exp (-2^{16}\mathcal{L}{(}\alpha )^2k^2\epsilon ^{-2}), \]
+</div>
+<p> so </p>
+<div class="displaymath" id="a0000000140">
+  \[ \mathrm{codim}(V)\leq \left\lvert \Delta '\right\rvert \leq 2^{23}\mathcal{L}{(}\alpha )^2k^2\epsilon ^{-2}\leq 2^{25}\mathcal{L}{(}\alpha )^2\mathcal{L}{(}\epsilon \alpha /4)^2\epsilon ^{-2}, \]
+</div>
+<p> and now use \(\mathcal{L}{(}\epsilon \alpha /4)\leq 2\mathcal{L}{(}\epsilon \alpha )\), say. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="ast_le_circ">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.2</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#ast_le_circ">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000141"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/YaelDillies/LeanAPAP//blob/a6cdc492992775e1f557181f9ccdb5a8ea69bb7d/src/prereqs/dft.lean#L142">Lpnorm_conv_le_Lpnorm_dconv</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  For any function \(f:G\to \mathbb {C}\) and integer \(k\geq 1\) </p>
+<div class="displaymath" id="a0000000142">
+  \[ \|  f\ast f\| _{2k}\leq \|  f\circ f\| _{2k}. \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000141">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>To finish, similar trick to unbalancing. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="ast_expand">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.3</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#ast_expand">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000143"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/YaelDillies/LeanAPAP//blob/a6cdc492992775e1f557181f9ccdb5a8ea69bb7d/src/prereqs/convolution/basic.lean#L340">balance_conv</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  For any function \(f\) with \(\sum f(x)=1\) </p>
+<div class="displaymath" id="a0000000144">
+  \[ f\ast f-1/N = (f-1/N)\ast (f-1/N). \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000143">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Expand everything out. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="circ_expand">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.4</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#circ_expand">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000145"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/YaelDillies/LeanAPAP//blob/a6cdc492992775e1f557181f9ccdb5a8ea69bb7d/src/prereqs/convolution/basic.lean#L343">balance_dconv</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  For any function \(f\) with \(\sum f(x)=1\) </p>
+<div class="displaymath" id="a0000000146">
+  \[ f\circ f-1/N = (f-1/N)\circ (f-1/N). \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000145">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Expand everything out. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="global_dichotomy">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.5</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#global_dichotomy">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000147"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/YaelDillies/LeanAPAP//blob/a6cdc492992775e1f557181f9ccdb5a8ea69bb7d/src/finite_field/basic.lean#L15">global_dichotomy</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  Let \(\epsilon {\gt}0\) and \(\mu \equiv 1/N\). If \(A,C\subseteq G\), where \(C\) has density at least \(\gamma \), and </p>
+<div class="displaymath" id="a0000000148">
+  \[ \left\lvert N\langle \mu _A\ast \mu _A,\mu _C\rangle -1\right\rvert {\gt}\epsilon  \]
+</div>
+<p> then, if \(f=(\mu _A-1/N)\), \(\lVert f\circ f\rVert _{p(\mu )} \geq \epsilon /2N\) for \(p=2\lceil \mathcal{L}{(}\gamma )\rceil \). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000147">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> By Hölder’s inequality, for any \(p\geq 1\) </p>
+<div class="displaymath" id="a0000000149">
+  \[ \epsilon {\lt} \left\lvert  N\langle \mu _A \ast \mu _A - 1/N, \mu _C \rangle \right\rvert  \leq \lVert \mu _A\ast \mu _A-1/N\rVert _p\gamma ^{-1/p}N^{1-1/p}. \]
+</div>
+<p> In particular if we choose \(p=2\lceil \mathcal{L}{(}\gamma )\rceil \) then \(\gamma ^{-1/p}\leq e^{1/2}\leq 2\) and so we deduce that, by Lemma&#160;<a href="sect0004.html#ast_expand">5.3</a>, </p>
+<div class="displaymath" id="a0000000150">
+  \[ \lVert f\ast f\rVert _{p}\geq \tfrac {1}{2}\epsilon N^{1/p-1}. \]
+</div>
+<p> It remains to use Lemmas&#160;<a href="sect0004.html#ast_expand">5.3</a> and <a href="sect0004.html#circ_expand">5.4</a> and apply Lemma&#160;<a href="sect0004.html#ast_le_circ">5.2</a>, and note that we can pass from the \(L^p\) norm to the \(L^p(\mu )\) norm losing a factor of \(N^{1/p}\). </p>
+
+  </div>
+</div>
+<p><div class="proposition_thmwrapper" id="di_in_ff">
+  <div class="proposition_thmheading">
+    <span class="proposition_thmcaption">
+    Proposition
+    </span>
+    <span class="proposition_thmlabel">5.6</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#di_in_ff">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000151"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/YaelDillies/LeanAPAP//blob/a6cdc492992775e1f557181f9ccdb5a8ea69bb7d/src/finite_field/basic.lean#L73">di_in_ff</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="proposition_thmcontent">
+  <p>  Let \(\epsilon \in (0,1)\). If \(A,C\subseteq \mathbb {F}_q^n\), where \(C\) has density at least \(\gamma \), and </p>
+<div class="displaymath" id="a0000000152">
+  \[ \left\lvert N\langle \mu _A\ast \mu _A,\mu _C\rangle -1\right\rvert {\gt} \epsilon  \]
+</div>
+<p> then there is a subspace \(V\) of codimension </p>
+<div class="displaymath" id="a0000000153">
+  \[ \leq 2^{171}\epsilon ^{-24}\mathcal{L}{(}\alpha )^4\mathcal{L}{(}\gamma )^4. \]
+</div>
+<p> such that \(\lVert 1_{A}\ast \mu _V\rVert _\infty \geq (1+\epsilon /32)\alpha \). </p>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000151">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> By Lemma&#160;<a href="sect0004.html#global_dichotomy">5.5</a>, if \(f=\mu _A-1/N\), </p>
+<div class="displaymath" id="a0000000154">
+  \[ \lVert f\circ f\rVert _{p(\mu )}\geq \epsilon /2N, \]
+</div>
+<p> where \(p=2\lceil \mathcal{L}{(}\gamma )\rceil \leq 4\mathcal{L}{(}\gamma )\). By Lemma&#160;<a href="sect0002.html#unbalancing">3.2</a> there exists some \(p'\) such that </p>
+<div class="displaymath" id="a0000000155">
+  \[ p'\leq 128\epsilon ^{-1}\log (96/\epsilon )\mathcal{L}{(}\gamma ) \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000156">
+  \[ \lVert f\circ f+1/N\rVert _{p'(\mu )}\geq (1+\epsilon /4)/N. \]
+</div>
+<p> By Lemma&#160;<a href="sect0004.html#circ_expand">5.4</a> \(f\circ f+1/N=\mu _A\circ \mu _A\). </p>
+<p>Let \(q=2\lceil p'+2^8\epsilon ^{-2}\log (64/\epsilon )\rceil \). By Corollary&#160;<a href="sect0003.html#sift_cor">4.3</a>, there are \(A_1,A_2\), both of density \(\geq \alpha ^{2q}\) such that </p>
+<div class="displaymath" id="a0000000157">
+  \[ \langle \mu _{A_1}\circ \mu _{A_2},1_{S}\rangle \geq 1-\epsilon /32 \]
+</div>
+<p> where </p>
+<div class="displaymath" id="a0000000158">
+  \[ S=\{ x : \mu _A\circ \mu _A(x)\geq (1-\epsilon /16)\|  \mu _A\circ \mu _A\| _{q(\mu )}\} . \]
+</div>
+<p> Since </p>
+<div class="displaymath" id="a0000000159">
+  \[ \|  \mu _A\circ \mu _A\| _{q(\mu )}\geq \|  \mu _A\circ \mu _A\| _{p'(\mu )}\geq (1+\epsilon /4)/N \]
+</div>
+<p> we know </p>
+<div class="displaymath" id="a0000000160">
+  \[ S\subseteq S'=\{ x : \mu _A\circ \mu _A(x)\geq (1+\epsilon /8)/N\} . \]
+</div>
+<p>By Theorem&#160;<a href="sect0004.html#ap_in_ff">5.1</a> (applied with \(\epsilon \) replaced by \(\epsilon /32\)) there is a subspace \(V\) of codimension </p>
+<div class="displaymath" id="a0000000161">
+  \[ \leq 2^{37}\mathcal{L}{(}\alpha ^{2q})^2\mathcal{L}{(}\epsilon \alpha ^{2q}/32)^2\epsilon ^{-2} \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000162">
+  \[ \langle \mu _V\ast \mu _{A_1}\circ \mu _{A_2},1_{S'}\rangle \geq 1-\tfrac {1}{16}\epsilon . \]
+</div>
+<p> Using \(\mathcal{L}{(}xy)\leq x^{-1}\mathcal{L}{(}y)\) we have </p>
+<div class="displaymath" id="a0000000163">
+  \[ \mathcal{L}{(}\epsilon \alpha ^{2q}/32)\leq 32\epsilon ^{-1}\mathcal{L}{(}\alpha ^{2q}), \]
+</div>
+<p> and we also use \(\mathcal{L}{(}x^y)\leq y\mathcal{L}{(}x)\) to simplify the codimension bound to </p>
+<div class="displaymath" id="a0000000164">
+  \[ \leq 2^{51}q^4\mathcal{L}{(}\alpha )^4\epsilon ^{-4}. \]
+</div>
+<p> We further note that (using \(\log x\leq x\) say) </p>
+<div class="displaymath" id="a0000000165">
+  \[ q\leq 2^{10}p'\epsilon ^{-2}\log (64/\epsilon )\leq 2^{30}\epsilon ^{-5}\mathcal{L}{(}\gamma ). \]
+</div>
+<p> Therefore the desired codimension bound follows. Finally, by definition of \(S'\), it follows that </p>
+<div class="displaymath" id="a0000000166">
+  \begin{align*}  (1+\epsilon /32)/N & \leq ((1+\epsilon /8)/N)(1-\epsilon /16)\\ & \leq \langle \mu _V\ast \mu _{A_1}\circ \mu _{A_2},\mu _A\circ \mu _A\rangle \\ & \leq \lVert \mu _V\ast \mu _A\rVert _\infty \lVert \mu _{A}\ast \mu _{A_2}\circ \mu _{A_1}\rVert _1\\ & = \lVert \mu _V\ast 1_{A}\rVert _\infty \left\lvert A\right\rvert ^{-1}, \end{align*}
+</div>
+<p> and the proof is complete. </p>
+
+  </div>
+</div>
+<p><div class="lemma_thmwrapper" id="no3aps_inner_prod">
+  <div class="lemma_thmheading">
+    <span class="lemma_thmcaption">
+    Lemma
+    </span>
+    <span class="lemma_thmlabel">5.7</span>
+    ✓
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#no3aps_inner_prod">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000167"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+    <button class="modal lean">L∃∀N</button>
+    <div class="modal-container">
+      <div class="modal-content">
+        <header>
+          <h1>Lean declarations</h1>
+          <button class="closebtn"><svg  class="icon icon-cross "><use xlink:href="symbol-defs.svg#icon-cross"></use></svg>
+</button>
+        </header>
+                <ul class="uses">
+          <li><a href="https://github.com/YaelDillies/LeanAPAP//blob/a6cdc492992775e1f557181f9ccdb5a8ea69bb7d/src/prereqs/salem_spencer.lean#L11">add_salem_spencer.L2inner_mu_conv_mu_mu_two_smul_mu</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+  <div class="lemma_thmcontent">
+  <p>  If \(A\subseteq G\) has no non-trivial three-term arithmetic progressions and \(G\) has odd order then </p>
+<div class="displaymath" id="a0000000168">
+  \[ \langle \mu _A\ast \mu _A,\mu _{2\cdot A}\rangle = 1/\left\lvert A\right\rvert ^2. \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000167">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p>Expand out using definitions. </p>
+
+  </div>
+</div>
+<p><div class="theorem_thmwrapper" id="a0000000169">
+  <div class="theorem_thmheading">
+    <span class="theorem_thmcaption">
+    Theorem
+    </span>
+    <span class="theorem_thmlabel">5.8</span>
+    <div class="thm_icons">
+    <a class="icon proof" href="sect0004.html#a0000000169">#</a>
+    <a class="icon proof" href="sect0004.html#a0000000170"><svg  class="icon icon-cogs "><use xlink:href="symbol-defs.svg#icon-cogs"></use></svg>
+</a>
+
+  </div>
+  </div>
+  <div class="theorem_thmcontent">
+  <p>Let \(q\) be an odd prime power. If \(A\subseteq \mathbb {F}_q^n\) with \(\alpha =\left\lvert A\right\rvert /q^n\) has no non-trivial three-term arithmetic progressions then </p>
+<div class="displaymath" id="a0000000171">
+  \[ n \ll \mathcal{L}{(}\alpha )^9. \]
+</div>
+
+  </div>
+</div> </p>
+<div class="proof_wrapper" id="a0000000170">
+  <div class="proof_heading">
+    <span class="proof_caption">
+    Proof
+    </span>
+    <span class="expand-proof">▼</span>
+  </div>
+  <div class="proof_content">
+  <p> Let \(t\geq 0\) be maximal such that there is a sequence of subspaces \(\mathbb {F}_q^n=V_0\geq \cdots \geq V_t\) and associated \(A_i\subseteq V_i\) with \(A_0=A\) such that </p>
+<ol class="enumerate">
+  <li><p>for \(0\leq i\leq t\) there exists \(x_i\) such that \(A_i\subseteq A-x_i\), </p>
+</li>
+  <li><p>with \(\alpha _i=\left\lvert A_i\right\rvert /\left\lvert V_i\right\rvert \) we have </p>
+<div class="displaymath" id="a0000000172">
+  \[ \alpha _{i+1}\geq \frac{65}{64}\alpha _i \]
+</div>
+<p> for \(0\leq i{\lt}t\), and </p>
+</li>
+  <li><div class="displaymath" id="a0000000173">
+  \[ \mathrm{codim} (V_{i+1}) \leq \mathrm{codim}(V_i)+O(\mathcal{L}{(}\alpha )^8) \]
+</div>
+<p> for \(0\leq i{\lt}t\). (here the second summand should be replaced with whatever explicit codimension bound we get from the above). </p>
+</li>
+</ol>
+<p>Note this is well-defined since \(t=0\) meets the requirements, and this process is finite and \(t \ll \mathcal{L}{(}\alpha )\), since \(\alpha _i\leq 1\) for all \(i\). Therefore </p>
+<div class="displaymath" id="a0000000174">
+  \[ \mathrm{codim}(V_t) \ll \mathcal{L}{(}\alpha )^9. \]
+</div>
+<p>Suppose first that </p>
+<div class="displaymath" id="a0000000175">
+  \[ \lvert V_t\rvert \langle \mu _{A_t}\ast \mu _{A_t},\mu _{2\cdot A_t}\rangle {\lt}1/2. \]
+</div>
+<p> In this case we now apply Proposition&#160;<a href="sect0004.html#di_in_ff">5.6</a> to \(A_t\subseteq V_t\) with \(\epsilon =1/2\) (note that \(N=\lvert V_t\rvert \) and all inner product, \(\mu \) etc, are relative to the ambient group \(V_t\) now). Therefore there is a subspace \(V\leq V_t\) of codimension (relative to \(V_t\)) of \(\ll \mathcal{L}{(}\alpha )^8\) such that there exists some \(x\in V_t\) with </p>
+<div class="displaymath" id="a0000000176">
+  \[ \frac{\lvert (A_t-x)\cap V\rvert }{\lvert V\rvert }=1_{A_t}\ast \mu _V(x)=\|  1_{A_t}\ast \mu _V\| _\infty \geq (1+1/64)\alpha _t, \]
+</div>
+<p> which contradicts the maximality of \(t\), letting \(V_{t+1}=V\) and \(A_{t+1}=(A_t-x)\cap V_t\). </p>
+<p>Therefore </p>
+<div class="displaymath" id="a0000000177">
+  \[ \lvert V_t\rvert \langle \mu _{A_t}\ast \mu _{A_t},\mu _{2\cdot A_t}\rangle \geq 1/2. \]
+</div>
+<p> By Lemma&#160;<a href="sect0004.html#no3aps_inner_prod">5.7</a> the left-hand side is equal to \(\lvert V_t\rvert /\lvert A_t\rvert ^2\), and therefore </p>
+<div class="displaymath" id="a0000000178">
+  \[ \alpha ^2 \leq \alpha _t^2 \leq 2/\lvert V_t\rvert . \]
+</div>
+<p> By the codimension bound the right-hand side is at most </p>
+<div class="displaymath" id="a0000000179">
+  \[ 2q^{O(\mathcal{L}{(}\alpha )^9)-n}. \]
+</div>
+<p> If \(\alpha ^2 \leq 2q^{-n/2}\) we are done, otherwise we deduce that \(\mathcal{L}{(}\alpha )^9 \gg n\) as required. </p>
+
+  </div>
+</div>
+
+</div> <!--main-text -->
+</div> <!-- content-wrapper -->
+</div> <!-- content -->
+</div> <!-- wrapper -->
+
+<nav class="prev_up_next">
+  <svg  id="showmore-minus" class="icon icon-eye-minus showmore"><use xlink:href="symbol-defs.svg#icon-eye-minus"></use></svg>
+
+  <svg  id="showmore-plus" class="icon icon-eye-plus showmore"><use xlink:href="symbol-defs.svg#icon-eye-plus"></use></svg>
+
+  <a href="sect0003.html" title="Dependent random choice"><svg  class="icon icon-arrow-left "><use xlink:href="symbol-defs.svg#icon-arrow-left"></use></svg>
+</a>
+  <a href="index.html" title="LeanAPAP"><svg  class="icon icon-arrow-up "><use xlink:href="symbol-defs.svg#icon-arrow-up"></use></svg>
+</a>
+</nav>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/plastex.js"></script>
+<script type="text/javascript" src="js/svgxuse.js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js"></script>
+<script type="text/javascript" src="js/showmore.js"></script>
+</body>
+</html>

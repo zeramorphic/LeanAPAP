@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/style.css" />
+<link rel="stylesheet" href="styles/theme-blue.css" />
+<link rel="stylesheet" href="styles/stylecours.css" />
+<link rel="stylesheet" href="styles/style_coverage.css" />
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<title>Formalization status</title>
+</head>
+
+<body>
+<div class="wrapper">
+<header>
+  <a href="index.html">Home</a>
+  <h1 id="doc_title">Formalization status</h1>
+</header>
+
+<div class="content">
+
+<h2>Completion report</h2>
+
+Click chapter titles to see missing items.
+
+
+<section>
+  <h3>1 Almost-Periodicity <span class="partial">75%</span></h3>
+  
+  <ul class="coverage">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <li>
+      <div class="thm_thmheading">Theorem 1.7 (linfty_ap)</div>
+      <div class="thm_thm_content"><p>  Let \(\epsilon \in (0,1]\) and \(m\geq 1\). Let \(K\geq 2\) and \(A,S\subseteq G\) with \(\lvert A+S\rvert \leq K\lvert A\rvert \). Let \(B,C\subseteq G\). Let \(\eta =\min (1,\lvert C\rvert /\lvert B\rvert )\). There exists \(T\subseteq G\) such that </p>
+<div class="displaymath" id="a0000000034">
+  \[ \lvert T\rvert \geq K^{-4096\lceil \mathcal{L}{\eta }\rceil \epsilon ^{-2}}\lvert S\rvert  \]
+</div>
+<p> such that for any \(t\in T\) we have </p>
+<div class="displaymath" id="a0000000035">
+  \[ \|  \tau _t(\mu _A\ast 1_B\ast \mu _C)-\mu _A\ast 1_B\ast \mu _C\| _{\infty }\leq \epsilon . \]
+</div>
+</div>
+    </li>
+    
+    
+    
+    <li>
+      <div class="thm_thmheading">Theorem 1.8 (linfty_ap_boosted)</div>
+      <div class="thm_thm_content">
+<p>Let \(\epsilon \in (0,1]\) and \(m\geq 1\) and \(k\geq 1\). Let \(K\geq 2\) and \(A,S\subseteq G\) with \(\lvert A+S\rvert \leq K\lvert A\rvert \). Let \(B,C\subseteq G\). Let \(\eta =\min (1,\lvert C\rvert /\lvert B\rvert )\). There exists \(T\subseteq G\) such that </p>
+<div class="displaymath" id="a0000000042">
+  \[ \lvert T\rvert \geq K^{-4096\lceil \mathcal{L}{\eta }\rceil k^2\epsilon ^{-2}}\lvert S\rvert  \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000043">
+  \[ \|  \mu _T^{(k)}\ast \mu _A\ast 1_B\ast \mu _C-\mu _A\ast 1_B\ast \mu _C\| _{\infty }\leq \epsilon . \]
+</div>
+</div>
+    </li>
+    
+    
+  </ul>
+  
+</section>
+
+<section>
+  <h3>2 Chang’s lemma <span class="partial">90%</span></h3>
+  
+  <ul class="coverage">
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <li>
+      <div class="thm_thmheading">Lemma 2.8 (diss_energy)</div>
+      <div class="thm_thm_content"><p>   If \(A\subseteq G\) is dissociated then \(E_{2m}(A) \leq m! \left\lvert A\right\rvert ^m\). </p>
+</div>
+    </li>
+    
+    
+    
+    
+  </ul>
+  
+</section>
+
+<section>
+  <h3>3 Unbalancing <span class="ok">100%</span></h3>
+  
+</section>
+
+<section>
+  <h3>4 Dependent random choice <span class="ok">100%</span></h3>
+  
+</section>
+
+<section>
+  <h3>5 Finite field model <span class="partial">62%</span></h3>
+  
+  <ul class="coverage">
+    
+    
+    <li>
+      <div class="thm_thmheading">Theorem 5.1 (ap_in_ff)</div>
+      <div class="thm_thm_content"><p>  If \(A_1,A_2,S\subseteq \mathbb {F}_q^n\) are such that \(A_1\) and \(A_2\) both have density at least \(\alpha \) then there is a subspace \(V\) of codimension </p>
+<div class="displaymath" id="a0000000120">
+  \[ \mathrm{codim}(V)\leq 2^{27}\mathcal{L}{(}\alpha )^2\mathcal{L}{(}\epsilon \alpha )^2\epsilon ^{-2} \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000121">
+  \[ \left\lvert \langle \mu _V\ast \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle -\langle \mu _{A_1}\ast \mu _{A_2},1_{S}\rangle \right\rvert \leq \epsilon . \]
+</div>
+</div>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <li>
+      <div class="thm_thmheading">Proposition 5.6 (di_in_ff)</div>
+      <div class="thm_thm_content"><p>  Let \(\epsilon \in (0,1)\). If \(A,C\subseteq \mathbb {F}_q^n\), where \(C\) has density at least \(\gamma \), and </p>
+<div class="displaymath" id="a0000000152">
+  \[ \left\lvert N\langle \mu _A\ast \mu _A,\mu _C\rangle -1\right\rvert {\gt} \epsilon  \]
+</div>
+<p> then there is a subspace \(V\) of codimension </p>
+<div class="displaymath" id="a0000000153">
+  \[ \leq 2^{171}\epsilon ^{-24}\mathcal{L}{(}\alpha )^4\mathcal{L}{(}\gamma )^4. \]
+</div>
+<p> such that \(\lVert 1_{A}\ast \mu _V\rVert _\infty \geq (1+\epsilon /32)\alpha \). </p>
+</div>
+    </li>
+    
+    
+    
+    
+    
+    <li>
+      <div class="thm_thmheading">Theorem 5.8 (a0000000169)</div>
+      <div class="thm_thm_content"><p>Let \(q\) be an odd prime power. If \(A\subseteq \mathbb {F}_q^n\) with \(\alpha =\left\lvert A\right\rvert /q^n\) has no non-trivial three-term arithmetic progressions then </p>
+<div class="displaymath" id="a0000000171">
+  \[ n \ll \mathcal{L}{(}\alpha )^9. \]
+</div>
+</div>
+    </li>
+    
+    
+  </ul>
+  
+</section>
+
+
+<h2>What to define next?</h2>
+
+
+<section>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+</section>
+
+
+<h2>What to state next?</h2>
+
+
+<section>
+  
+  <h3>1 Almost-Periodicity</h3>
+  <ul class="coverage">
+    
+    <li>
+      <div class="thm_thmheading">Theorem 1.7 (linfty_ap)</div>
+      <div class="thm_thm_content"><p>  Let \(\epsilon \in (0,1]\) and \(m\geq 1\). Let \(K\geq 2\) and \(A,S\subseteq G\) with \(\lvert A+S\rvert \leq K\lvert A\rvert \). Let \(B,C\subseteq G\). Let \(\eta =\min (1,\lvert C\rvert /\lvert B\rvert )\). There exists \(T\subseteq G\) such that </p>
+<div class="displaymath" id="a0000000034">
+  \[ \lvert T\rvert \geq K^{-4096\lceil \mathcal{L}{\eta }\rceil \epsilon ^{-2}}\lvert S\rvert  \]
+</div>
+<p> such that for any \(t\in T\) we have </p>
+<div class="displaymath" id="a0000000035">
+  \[ \|  \tau _t(\mu _A\ast 1_B\ast \mu _C)-\mu _A\ast 1_B\ast \mu _C\| _{\infty }\leq \epsilon . \]
+</div>
+</div>
+    </li>
+    
+    <li>
+      <div class="thm_thmheading">Theorem 1.8 (linfty_ap_boosted)</div>
+      <div class="thm_thm_content">
+<p>Let \(\epsilon \in (0,1]\) and \(m\geq 1\) and \(k\geq 1\). Let \(K\geq 2\) and \(A,S\subseteq G\) with \(\lvert A+S\rvert \leq K\lvert A\rvert \). Let \(B,C\subseteq G\). Let \(\eta =\min (1,\lvert C\rvert /\lvert B\rvert )\). There exists \(T\subseteq G\) such that </p>
+<div class="displaymath" id="a0000000042">
+  \[ \lvert T\rvert \geq K^{-4096\lceil \mathcal{L}{\eta }\rceil k^2\epsilon ^{-2}}\lvert S\rvert  \]
+</div>
+<p> such that </p>
+<div class="displaymath" id="a0000000043">
+  \[ \|  \mu _T^{(k)}\ast \mu _A\ast 1_B\ast \mu _C-\mu _A\ast 1_B\ast \mu _C\| _{\infty }\leq \epsilon . \]
+</div>
+</div>
+    </li>
+    
+  </ul>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+  <h3>5 Finite field model</h3>
+  <ul class="coverage">
+    
+    <li>
+      <div class="thm_thmheading">Theorem 5.8 (a0000000169)</div>
+      <div class="thm_thm_content"><p>Let \(q\) be an odd prime power. If \(A\subseteq \mathbb {F}_q^n\) with \(\alpha =\left\lvert A\right\rvert /q^n\) has no non-trivial three-term arithmetic progressions then </p>
+<div class="displaymath" id="a0000000171">
+  \[ n \ll \mathcal{L}{(}\alpha )^9. \]
+</div>
+</div>
+    </li>
+    
+  </ul>
+  
+</section>
+
+
+<h2>What to prove next?</h2>
+
+
+<section>
+  
+</section>
+
+<section>
+  
+  <h3>2 Chang’s lemma</h3>
+  <ul class="coverage">
+    
+    <li>
+      <div class="thm_thmheading">Lemma 2.8 (diss_energy)</div>
+      <div class="thm_thm_content"><p>   If \(A\subseteq G\) is dissociated then \(E_{2m}(A) \leq m! \left\lvert A\right\rvert ^m\). </p>
+</div>
+    </li>
+    
+  </ul>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+</section>
+
+<section>
+  
+  <h3>5 Finite field model</h3>
+  <ul class="coverage">
+    
+    <li>
+      <div class="thm_thmheading">Proposition 5.6 (di_in_ff)</div>
+      <div class="thm_thm_content"><p>  Let \(\epsilon \in (0,1)\). If \(A,C\subseteq \mathbb {F}_q^n\), where \(C\) has density at least \(\gamma \), and </p>
+<div class="displaymath" id="a0000000152">
+  \[ \left\lvert N\langle \mu _A\ast \mu _A,\mu _C\rangle -1\right\rvert {\gt} \epsilon  \]
+</div>
+<p> then there is a subspace \(V\) of codimension </p>
+<div class="displaymath" id="a0000000153">
+  \[ \leq 2^{171}\epsilon ^{-24}\mathcal{L}{(}\alpha )^4\mathcal{L}{(}\gamma )^4. \]
+</div>
+<p> such that \(\lVert 1_{A}\ast \mu _V\rVert _\infty \geq (1+\epsilon /32)\alpha \). </p>
+</div>
+    </li>
+    
+  </ul>
+  
+</section>
+
+
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/coverage.js"></script>
+</body>
+</html>
